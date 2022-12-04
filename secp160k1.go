@@ -1,4 +1,4 @@
-package secpk1
+package koblitzcurve
 
 import (
 	"crypto/elliptic"

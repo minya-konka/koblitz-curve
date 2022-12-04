@@ -1,1 +1,3 @@
-# secpk1
+# koblitz-curve
+
+Koblitz curves in go

@@ -1,3 +1,3 @@
-module github.com/minya-konka/secpk1
+module github.com/minya-konka/koblitz-curve
 
 go 1.17
