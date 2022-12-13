@@ -7,7 +7,7 @@ import (
 
 var secp256k1 *curve
 
-func initSECP256K1() {
+func init() {
 	secp256k1 = &curve{elliptic.CurveParams{Name: "secp256k1"}}
 	secp256k1.P, _ = new(big.Int).SetString("fffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f", 16)
 	secp256k1.N, _ = new(big.Int).SetString("fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141", 16)
@@ -19,6 +19,5 @@ func initSECP256K1() {
 
 // S256 returns an elliptic.Curve which implements secp256k1.
 func S256() elliptic.Curve {
-	initonce.Do(initSECP256K1)
 	return secp256k1
 }

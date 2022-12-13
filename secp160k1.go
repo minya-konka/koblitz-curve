@@ -7,7 +7,7 @@ import (
 
 var secp160k1 *curve
 
-func initSECP160K1() {
+func init() {
 	secp160k1 = &curve{elliptic.CurveParams{Name: "secp160k1"}}
 	secp160k1.P, _ = new(big.Int).SetString("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFAC73", 16)
 	secp160k1.N, _ = new(big.Int).SetString("0100000000000000000001B8FA16DFAB9ACA16B6B3", 16)
@@ -19,6 +19,5 @@ func initSECP160K1() {
 
 // S160 returns an elliptic.Curve which implements secp160k1.
 func S160() elliptic.Curve {
-	initonce.Do(initSECP160K1)
 	return secp160k1
 }

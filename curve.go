@@ -3,12 +3,10 @@ package koblitzcurve
 import (
 	"crypto/elliptic"
 	"math/big"
-	"sync"
 )
 
 var (
-	initonce sync.Once
-	three    = new(big.Int).SetUint64(3)
+	three = new(big.Int).SetUint64(3)
 )
 
 type curve struct {
